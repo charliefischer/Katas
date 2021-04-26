@@ -11,3 +11,9 @@ describe('minutes', () => {
     expect(time(60)).toEqual('00:01:00')
   })
 })
+
+describe('hours', () => {
+  test('3600 returns 01:00:00', () => {
+    expect(time(3600)).toEqual('01:00:00')
+  })
+})

@@ -1,11 +1,22 @@
 time = seconds => {
-  if(seconds < 10) {
-    return '00:00:0' + seconds
+  let s = 0
+  let m = 0
+  let h = 0
+
+  for(let i = 0; i < seconds; i++){
+    if(s >= 59){
+      s = 0
+      if(m >= 59) {
+        m = 0
+        h++
+      } else {
+        m++
+      }
+    } else {
+      s++
+    }
   }
-  if(seconds < 60) {
-    return '00:00:' + seconds
-  }
-  return '00:01:00'
+  return `0${h}:0${m}:0${s}`
 }
 
 module.exports = time
